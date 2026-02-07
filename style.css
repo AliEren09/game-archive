@@ -1,0 +1,129 @@
+body {
+  margin:0; /* Öğenin dışındaki boşluğu kontrol etmemize yarayan kod. */
+  font-family:"Roboto", "Segoe UI", Tahoma, Geneva, sans-serif; /*Yazı tipini değiştirir. */
+  background:linear-gradient(135deg, #1b2838, #171a21); /* İki farklı rengi yumuşak bir geçişle birbirine karıştıran bir kod. */
+  color: white; /* Body içindeki yazı rengini ayarlayan kod. */
+}
+header{
+  background-color: rgba(0,0,0,0.6); /* Arka plan rengini değiştirir.*/
+  padding: 20px; /* İçerik ile kenar arasında 20 piksellik boşluk bırakmamızı sağlar. */
+  position: sticky; /* Sayfa kaydırılsa bile belirli bir pozisyonda sabit kalmasını sağlar. */
+  top: 0; /* Sayfanın en üstüne yerleştirilmesini sağlar. */
+  z-index: 1000; /*Öğenin diğer öğeler üzerine çıkmasını sağlar. */
+}
+h1 {
+  margin: 0 0 10px 0; /* Üst boşluk 0, sağ boşluk 0, alt boşluk 10 piksel, sol boşluk 0 piksellik uzaklık sağlar.*/
+  color: 	#87CEEB;  /* Yazı rengini değiştirir.*/
+  text-align: center; /* Yazıyı ortalamamızı sağlar. */
+}
+#arama{
+  width: 100%; /* Genişliğini ayarlarız. */
+  padding: 10px; /* içerik ile kenar arasında 10 piksellik boşluk bırakır.*/
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #66c0f4; /* Kenarını tanımlayan kod. */
+  color: white;
+  font-size: 16px;
+  margin-bottom: 10px; /* Diğer öğeler ile arasındaki mesafeyi ayarlayan kod. */
+  border-radius: 8px; /* Kenarı yuvarlatmaya yarar her köşe için 8 piksellik yuvarlama yapar. */
+}
+#Filtre {
+  display: flex;
+  justify-content: center; /* flex container içinde öğelerin yatayda hizalamayı sağlar. */
+  gap: 10px;
+  list-style: none; /* Liste öğelerinin işaretlerini kaldırır. */
+  padding: 0;
+  flex-wrap: wrap; /* Öğelerin bir satıra sığmadığında nasıl davranacağını belirler. Bu kodda sığmadığı zaman bir alt satıra geçer. */
+}
+#Filtre li {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  cursor: pointer; /* Kullanıcının öğe üzerine geldiğinde fare imcelini el şeklinde yapmasını sağlar. */
+  transition: 0.3s; /* Stil üzerinde yapılan değişikliğin ne kadar süre içinde gerçekleşeciğini ayarlar. */
+}
+#Filtre li.active, /* Active hangi öğenin seçili olduğunu belirtmek icin kullandık. Hoverda öğenin üstüne gelindiğinde stil uygulanır. */
+#Filtre li:hover {
+  background-color: #66c0f4; /* Fare üzerine geldiğinde arkaplan mavi olur.*/
+  color: black; /* Fare üzerine geldiğinde yazı siyah olur.*/
+  font-weight: bold; /* Fare üzerine geldiğine yazı kalınlaşır, bold olur.*/
+}
+.main-layout {
+  display: flex; /* Düzeni flexbox kullaranak sağlıyoruz.*/
+  justify-content: center; /* içerikleri yatayda ortalar.*/
+  padding: 20px; 
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.game-list {
+  display: flex; /* Flexbox ile yatayda sıralama. */
+  flex-wrap: wrap; /* Satıra sığmadığı zaman yeni satıra geçmesi için kullanıyoruz. */
+  gap: 20px; /* Oyunlar arasındaki mesafeyi belirler. */
+  justify-content: center; /* Öğeleri ortalar. */
+  align-items: center; /* Dikeyde ortalar. */
+  padding: 20px;
+}
+
+.game-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+  width: 18%; /* Yalnızca 5 öğe için %18 genişlik */
+  min-width: 200px; /* Minumum genişlik, daha küçük ekranlarda öğelerin küçülmemesini sağlar */
+  text-align: center; /* Yazıyı ortalar.*/
+  cursor: pointer; /* Fare imcelinin el işaretine dönmesini sağlar.*/
+  transition: 0.3s; /* Stil değişiklikleri 0.3 saniye içinde yumuşakça geçiş yapar.*/
+}
+
+.game-item:hover {
+  transform: scale(1.05); /* Fare üstüne geldiğinde %5'lik bir büyüme olur.*/
+}
+
+.game-item img {
+  width: 100%; /* Resmin genişiğini %100 yapar.*/
+  border-radius: 8px; /* Resmin köşeleri 8 piksel yumuşatılır.*/
+}
+
+.game-item h3 {
+  color: #66c0f4; /* Başlığın yazı rengini değiştirir.*/
+}
+
+/* Modal */
+.modal {
+  display: none; /* Modal başlangıçta gizli durumdadır.*/
+  position: fixed; /* Modalı sayfada sabit bir konumda tutar.*/
+  z-index: 2000; /* Modalın diğer öğeler arasında daha üstte görünmesini sağlar.*/
+  left: 0;
+  top: 0;
+  width: 100%; /* Modalın genişliğini %100 yapar.*/
+  height: 100%; /* Modalın yüksekliğini %100 yapar.*/
+  background-color: rgba(0,0,0,0.85); 
+}
+
+.modal-content {
+  background-color: #222; /* Arkaplan rengini değiştirir.*/
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px; 
+  border-radius: 12px; /* Modalin köşelerine 12 piksellik bir yumuşatma uygular.*/  
+  color: white; /* Yazıyı beyaz yapar*/
+  text-align: center; /* Yazıları ortalar.*/
+  position: relative; /* Modal içeriğine göre pozisyonu belirler.*/
+}
+
+.modal-content img {
+  max-width: 100%;
+  border-radius: 10px; /* Modalin köşelerine 10 piksellik bir yumuşatma uygular.*/  
+}
+
+.close-btn {
+  position: absolute; /* Kapatma butonunu modal içeriğine göre sabitler.*/
+  top: 10px; 
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer; /* Fare imcelinin el işaretine dönmesini sağlar.*/
+  color: white; /* Yazıyı beyaz yapar.*/
+}

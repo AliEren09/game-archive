@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8"> <!-- Türkçe karakterlerin doğru görüntülenmesini sağlar.-->
+        <title>Dijital Oyun Arşiv Sitesi</title> <!-- Sayfa başlığını bu kısımda tutuyoruz.-->
+        <link rel="stylesheet" href="style.css"> <!-- Html dosyamıza, css dosyamızı bağlıyoruz.-->
+    </head>
+    <body> <!-- Kullanıcın gördüğü öğeler buradadır. -->
+        <header>
+            <h1>Oyun Arşivleri</h1> <!-- Başlık öğemiz.-->
+            <input type="text" id="arama" placeholder="Aramak istediğiniz oyunu yazınız..."> <!-- Kullanıcının oyun araması yapabilmesi için arama çubuğu öğemiz.-->
+            <ul id="Filtre"> <!-- Liste oluşturduk. -->
+              <li data-genre="Tümü" class="active">Tümü</li> <!-- Oyun türlerimizi belirtiyoruz. Active yaparak "Tümü" ifadesini seçili olarak getiriyoruz.-->
+              <li data-genre="RPG">RPG</li>
+              <li data-genre="Aksiyon">Aksiyon</li>
+              <li data-genre="Sandbox">Sandbox</li>
+              <li data-genre="Açık Dünya">Açık Dünya</li>
+              <li data-genre="Hayatta Kalma">Hayatta Kalma</li>
+              <li data-genre="Spor">Spor</li>
+              <li data-genre="Korku">Korku</li>
+              <li data-genre="Strateji">Strateji</li>
+            </ul>
+          </header>
+
+          <main class="main-layout"> 
+            <div class="container">
+              <div class="game-list" id="Oyunliste"></div>
+            </div>
+          </main>
+          <!-- Açılır pencere.-->
+          <div id="gameModal" class="modal">
+            <div class="modal-content">
+              <span class="close-btn">&times;</span> <!-- Kapatma butonumuz.-->
+              <img id="modalImage" src="" alt=""> <!--Resim buraya eklenicek.-->
+              <h2 id="modalTitle"></h2> <!-- Oyun başlığı buraya eklenicek.-->
+              <p id="modalGenre"></p> <!-- Oyun türü buraya eklenicek.--> 
+              <p id="modalDesc"></p> <!-- Oyun açıklaması buraya eklenicek.-->
+            </div>
+          </div>
+          <script src="oyunlar.js"></script> <!-- Html dosyamıza oyunlar.js javascript dosyamızı ekliyoruz.-->
+          <script src="script.js"></script> <!-- Html dosyamıza script.js javascript dosyamızı ekliyoruz.-->
+          
+    </body>
+</html>
